@@ -5,10 +5,9 @@ import tiktoken
 
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
 
-# Define your data
-data = """
-Your data here...
-"""
+# Read data from the file
+with open("data.txt", "r") as f:
+    data = f.read().strip()
 
 # Initialize the OpenAI API client
 openai.api_key = OPENAI_API_KEY
