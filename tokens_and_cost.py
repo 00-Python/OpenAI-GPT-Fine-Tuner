@@ -27,10 +27,16 @@ def estimate_cost(tokens):
     cost = (tokens / 1000) * training_cost_per_1k_tokens
     return cost
 
+# Convert cost to human-readable format
+def format_cost(cost):
+    return "£{:.5f}".format(cost)
+
 # Count tokens in the data
 data_tokens = count_tokens(data)
 print("Total tokens in data:", data_tokens)
 
 # Estimate cost
 data_cost = estimate_cost(data_tokens)
-print("Estimated cost:", data_cost)
+formatted_cost = format_cost(data_cost)
+print("Estimated cost:", formatted_cost)
+
